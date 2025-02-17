@@ -1,0 +1,28 @@
+.lista{
+    border-bottom: solid 1px;
+    border-color: rgb(228, 228, 228);
+    padding: 8px 9px;
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+}
+.title{
+    margin-bottom: -3px;
+    margin-top: 15px;
+    padding-left: 16px;
+    font-weight: 400;
+}
+.item{
+    padding: 5px 8px;
+}
+.item a{
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+}
+.item:hover{
+    background-color: rgba(244, 244, 244, 0.975);
+    border-radius: 7px;
+}

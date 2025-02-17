@@ -1,0 +1,15 @@
+.boxListVideos{
+    width: calc(100% - 230px);
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+}
+.list{
+    padding-top: 4rem;
+    list-style: none;
+}
+.list li{
+    margin-bottom: 10px;
+}

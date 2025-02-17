@@ -1,0 +1,30 @@
+.button{
+    color: blue;
+    background-color: white;
+    padding: 5px 8px;
+    padding-right: 15px;
+    border-radius: 50px;
+    border: solid 1px lightgray;
+}
+.button:hover{
+    background-color: rgba(220, 245, 253, 0.926);
+    cursor: pointer;
+}
+.login{
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+.loginimg{
+    width: 20px;
+    margin-right: 15px;
+}
+.avatarimg{
+    width: 25px;
+    position: relative;
+}
+.content{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}

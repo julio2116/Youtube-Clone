@@ -1,0 +1,32 @@
+.channel{
+    border-bottom: solid 1px;
+    border-color: rgb(228, 228, 228);
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+.channelContent{
+    width: 50%;
+    display: grid;
+    gap: 5px;
+    max-width: 480px;
+    align-content: center;
+}
+.subscribers > span:first-child::after{
+    content: "•";
+    margin: 0 4px;
+}
+.icon{
+    display: grid;
+    height: 136px;
+    width: 50%;
+    max-width: 480px;
+    justify-items: center;
+    align-content: center;
+    cursor: pointer;
+    padding-bottom: 5px;
+}
+.icon > img{
+    width: 24%;
+    border-radius: 50%;
+}

@@ -1,0 +1,33 @@
+.imgs{
+    display: flex;
+}
+.imgs span{
+    font-size: 9px;
+    font-family: sans-serif;
+    margin-top: 2px;
+}
+.imgs a{
+    align-self: center;
+    margin-top: 2px;
+}
+.menu{
+    position: relative;
+    padding: 2px 9px;
+    border-radius: 50px;
+    margin-right: 15px;
+}
+.menu img{
+    width: 20px;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    cursor: pointer;
+}
+.menu:hover{
+    background-color: rgba(232, 232, 232, 0.975);
+}
+.logo{
+    width: 100px;
+    margin-right: 3px;
+}
