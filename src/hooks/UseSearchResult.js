@@ -110,7 +110,7 @@ function useSearchResult() {
   function formatTime(duration) {
     let period = duration.slice(2, -1);
 
-    period = time.replace("M", ":");
+    period = period.replace("M", ":");
     period = period.replace("H", ":");
     period = period.split(":");
 

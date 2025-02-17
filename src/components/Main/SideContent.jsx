@@ -5,7 +5,6 @@ import SearchResultChannel from "./SearchResultChannel";
 
 const SideContent = () => {
   const result = useSearchResult();
-  console.log(result);
 
   return (
     <>
