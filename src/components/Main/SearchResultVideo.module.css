@@ -43,6 +43,7 @@
     margin: 0 4px;
 }
 .duration{
+    display: flex;
     position: absolute;
     z-index: 1;
     color: white;
@@ -60,17 +61,6 @@
     position: relative;
     display: flex;
     flex-direction: column;
-}
-.tag {
-    display: inline;
-    z-index: 1;
-    color: white;
-    background-color: rgba(0, 0, 0, 0.6);
-    font-size: 0.8rem;
-    line-height: 1.2rem;
-    font-weight: 500;
-    padding: 2px 5px;
-    border-radius: 4px;
 }
 .channel{
     display: flex;

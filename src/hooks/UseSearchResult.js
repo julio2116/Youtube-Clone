@@ -31,7 +31,7 @@ function useSearchResult() {
 
         const [viewsRes, channelsRes] = await Promise.all([
           fetch(
-            `https://www.googleapis.com/youtube/v3/videos?part=statistics,contentDetails&id=${viewsIds}&key=${key}`
+            `https://www.googleapis.com/youtube/v3/videos?part=statistics,contentDetails,snippet,topicDetails&id=${viewsIds}&key=${key}`
           ),
           fetch(
             `https://www.googleapis.com/youtube/v3/channels?part=statistics,contentDetails,snippet&id=${channelsIds}&key=${key}`
@@ -48,7 +48,7 @@ function useSearchResult() {
     },
     [termSearched]
   );
-
+  console.log(views)
   function joinObjectsVideos() {
     const allSearchResultsObjects = searchResult?.items?.map((item) => ({
       id: item.etag,

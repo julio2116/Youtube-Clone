@@ -1,9 +1,11 @@
-import { handlePublishedTime, newContent } from "../../utils/publishedTime";
+import { handlePublishedTime } from "../../utils/publishedTime";
 import { formatNumbers } from "../../utils/FormatNumbers";
 import { useNavigate } from "react-router";
 import styles from "./SearchResultVideo.module.css";
+import ShortTag from "./ShortTag";
+import Tag from "./Tag";
 
-const SearchResultVideo = ({ item }) => {
+const SearchResultVideo = ({ item, short }) => {
   const navigate = useNavigate();
 
   function handleVideoSelected(videoId) {
@@ -18,7 +20,7 @@ const SearchResultVideo = ({ item }) => {
         >
           <img src={item.thumb} alt="" />
           {item.kind === "video" && (
-            <span className={styles.duration}>{item.duration}</span>
+            <span className={styles.duration}>{short ? <ShortTag /> : item.duration}</span>
           )}
         </div>
         <div className={styles.videoInfo}>
@@ -43,17 +45,7 @@ const SearchResultVideo = ({ item }) => {
           <span className={styles.content}>
             {item.description}
           </span>
-            {
-              <div>
-                {true == newContent(item.published) ? (
-                  <span className={styles.tag}>New</span>
-                ) : (
-                  item.definition === "hd" && (
-                    <span className={styles.tag}>HD</span>
-                  )
-                )}
-              </div>
-            }
+          <Tag published={item.published} definition={item.definition}/>
         </div>
       </li>
     </>
