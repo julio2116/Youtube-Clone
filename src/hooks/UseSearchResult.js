@@ -19,22 +19,36 @@ function useSearchResult() {
 
       async function fetchData() {
         const res = await fetch(
-          `https://www.googleapis.com/youtube/v3/search?key=${key}&part=snippet&q=${termSearched}&maxResults=50`
+          `https://www.googleapis.com/youtube/v3/search?key=${key}&part=snippet&q=${termSearched}&maxResults=50`,
+          {
+            mode: 'cors',
+            credentials: 'same-origin'
+          }
         );
         const data = await res.json();
         setSearchResult((prev) => ({ ...prev, ...data }));
 
-        const channelsIds = data?.items
-          ?.map((item) => item.snippet.channelId)
-          .join();
+        const channelsIds = data?.items?.map((item) => item.snippet.channelId);
+        const channelsIdsConjunct = new Set(channelsIds);
+        const channelsIdsUnic = Array.from(channelsIdsConjunct).join();
+
         const viewsIds = data?.items?.map((item) => item.id.videoId).join();
+        console.log(channelsIdsUnic)
 
         const [viewsRes, channelsRes] = await Promise.all([
           fetch(
-            `https://www.googleapis.com/youtube/v3/videos?part=statistics,contentDetails,snippet,topicDetails&id=${viewsIds}&key=${key}`
+            `https://www.googleapis.com/youtube/v3/videos?part=statistics,contentDetails,snippet,topicDetails&id=${viewsIds}&key=${key}`,
+            {
+              mode: 'cors',
+              credentials: 'same-origin'
+            }
           ),
           fetch(
-            `https://www.googleapis.com/youtube/v3/channels?part=statistics,contentDetails,snippet&id=${channelsIds}&key=${key}`
+            `https://www.googleapis.com/youtube/v3/channels?part=statistics,contentDetails,snippet&id=${channelsIdsUnic}&key=${key}`,
+            {
+              mode: 'cors',
+              credentials: 'same-origin'
+            }
           ),
         ]);
         const [viewsData, channelsData] = await Promise.all([
@@ -48,7 +62,6 @@ function useSearchResult() {
     },
     [termSearched]
   );
-  console.log(views)
   function joinObjectsVideos() {
     const allSearchResultsObjects = searchResult?.items?.map((item) => ({
       id: item.etag,
