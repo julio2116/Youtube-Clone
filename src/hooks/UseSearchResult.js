@@ -33,7 +33,6 @@ function useSearchResult() {
         const channelsIdsUnic = Array.from(channelsIdsConjunct).join();
 
         const viewsIds = data?.items?.map((item) => item.id.videoId).join();
-        console.log(channelsIdsUnic)
 
         const [viewsRes, channelsRes] = await Promise.all([
           fetch(
