@@ -12,7 +12,7 @@ import noticias from"../../assets/noticias.svg";
 import esportes from"../../assets/esportes.svg";
 import cursos from"../../assets/cursos.svg";
 import podcasts from"../../assets/podcasts.svg";
-import YTPremium from"../../assets/YTPremium.svg";
+import YTPremium from"../../assets/YTpremium.svg";
 import YTmusic from"../../assets/YTmusic.svg";
 import YTkids from"../../assets/YTkids.svg";
 import configuracoes from"../../assets/configuracoes.svg";
