@@ -1,4 +1,5 @@
 import styles from "./LoginButton.module.css";
+import avatar from "../../assets/avatar.svg"
 
 const LoginButton = () => {
   return (
@@ -9,7 +10,7 @@ const LoginButton = () => {
           <span className={styles.content}>
             <img
               className={styles.avatarimg}
-              src="src/assets/avatar.svg"
+              src={avatar}
               alt=""
             />
             <strong>Fazer Login</strong>

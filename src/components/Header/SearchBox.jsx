@@ -1,6 +1,9 @@
 import { useState } from "react";
 import styles from "./SearchBox.module.css";
 import { useNavigate } from "react-router";
+import kb from "../../assets/kb.svg"
+import lupa from "../../assets/lupa.svg"
+import microphone from "../../assets/microphone.svg"
 
 const SearchBox = () => {
   const navigate = useNavigate();
@@ -31,15 +34,15 @@ const SearchBox = () => {
             onBlur={handleFocus}
           />
           <div className={styles.img}>
-            <img src="./src/assets/kb.svg" alt="" />
+            <img src={kb} alt="" />
           </div>
         </div>
         <button className={styles.lupa}>
-          <img src="./src/assets/lupa.svg" alt="" />
+          <img src={lupa} alt="" />
         </button>
       </form>
       <span className={styles.microphone}>
-        <img src="./src/assets/microphone.svg" alt="" />
+        <img src={microphone} alt="" />
       </span>
     </div>
   );
