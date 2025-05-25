@@ -1,11 +1,11 @@
 import { handlePublishedTime } from "../../utils/publishedTime";
 import { formatNumbers } from "../../utils/FormatNumbers";
 import { useNavigate, useSearchParams } from "react-router";
-import styles from "./SearchResultVideo.module.css";
-import ShortTag from "./ShortTag";
-import Tag from "./Tag";
+import styles from "./RecomendedVideo.module.css";
+import ShortTag from "../Main/ShortTag";
+import Tag from "../Main/Tag";
 
-const SearchResultVideo = ({ item, short }) => {
+const RecomendedVideo = ({ item, short }) => {
   const navigate = useNavigate();
   const [term] = useSearchParams();
 
@@ -27,31 +27,22 @@ const SearchResultVideo = ({ item, short }) => {
         </div>
         <div className={styles.videoInfo}>
           <h4 onClick={() => handleVideoSelected(item.videoId)}>
-            {item.titleVideo}
+            {item.titleVideo.slice(0, 50) + (item.titleVideo.length >= 50 && '...')}
           </h4>
+          <div className={styles.channel}>
+            <span>{item.channelTitle}</span>
+          </div>
           <div>
             <span>{item.views && formatNumbers(item.views)} viwes</span>
             <span className={styles.publishedTime}>
               {handlePublishedTime(item.published)}
             </span>
           </div>
-          <div className={styles.channel}>
-            <img
-              className={styles.icon}
-              style={{ width: "30px", height: "30px" }}
-              src={item.icon}
-              alt=""
-            />
-            <span>{item.channelTitle}</span>
-          </div>
-          <span className={styles.content}>
-            {item.description}
-          </span>
           <Tag published={item.published} definition={item.definition}/>
         </div>
       </li>
     </>
   );
 };
-
-export default SearchResultVideo;
+//53
+export default RecomendedVideo;

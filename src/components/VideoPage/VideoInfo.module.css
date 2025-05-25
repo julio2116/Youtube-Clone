@@ -1,0 +1,75 @@
+.videoInfo{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    max-width: 850px;
+    justify-content: space-between;
+}
+.videoInfo h4{
+    margin: 15px 0;
+    cursor: pointer;
+    font-size: 24px;
+    font-family: sans-serif;
+    font-weight: 700;
+}
+.interactive{
+    display: flex;
+    justify-content: space-between;
+}
+.channel{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 5px 0;
+}
+.channel button{
+    margin-left: 20px;
+    background-color: black;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 30px;
+}
+.icon{
+    border-radius: 50%;
+}
+.subscribers{
+    font-size: 12px;
+    opacity: 0.7;
+}
+.feedback{
+    display: flex;
+    padding: 0 15px;
+    background-color: rgba(247, 247, 247, 0.975);
+    border-radius: 30px;
+    align-items: center;
+    gap: 10px;
+    height: 40px;
+}
+.feedback div{
+    border-right: solid 1px black;
+    padding-right: 10px;
+    align-items: center;
+    display: flex;
+}
+.feedback img{
+    width: 20px;
+    height: 20px;
+}
+.share{
+    padding: 5px 15px;
+    background-color: rgba(247, 247, 247, 0.975);
+    border-radius: 30px;
+    align-items: center;
+    display: flex;
+    gap: 10px;
+    height: 40px;
+}
+.share img{
+    width: 25px;
+    height: 25px
+}
+.content{
+    border-radius: 10px;
+    background-color: rgba(247, 247, 247, 0.975);
+    padding: 15px;
+}

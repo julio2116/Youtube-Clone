@@ -24,7 +24,7 @@ const SearchBox = () => {
     <div className={styles.searchbox}>
       <form onSubmit={handleSearch} className={styles.textsearchbox}>
         <div className={`${styles.inputbox} ${focus ? styles.focus : null}`}>
-          {focus && <img className={styles.teste} src='src/assets/lupa.svg' />}
+          {focus && <img className={styles.teste} src={lupa} />}
           <input
             name='value'
             className={styles.search}

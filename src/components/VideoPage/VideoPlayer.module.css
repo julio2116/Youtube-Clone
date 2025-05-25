@@ -1,18 +1,16 @@
 .videoBox{
     display: flex;
-    justify-content: center;
-    width: 100%;
-    gap: 18px;
 }
 .teste{
     margin-top: 80px;
     border-radius: 15px;
     overflow: hidden;
     width: 61.3%;
-    height: 73.9%;
+    height: 67%;
     display: flex;
+    min-width: 850px;
+    min-height: 478px;
 }
 .teste > div{
     position: relative;
-    /* top: 2px; */
 }

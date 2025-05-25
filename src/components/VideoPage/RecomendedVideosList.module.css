@@ -1,0 +1,12 @@
+.boxListVideos2{
+    margin-top: 80px;
+    width: 31%;
+}
+.list2{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.list2 li{
+
+}
