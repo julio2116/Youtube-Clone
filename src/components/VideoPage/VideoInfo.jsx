@@ -24,7 +24,6 @@ const VideoInfo = () => {
       );
       const data = await dataFetch.json();
 
-      console.log(dataVideo);
       const result = {
         title: dataVideo.items[0].snippet.title,
         icon: data.items[0].snippet.thumbnails.medium.url,
@@ -77,7 +76,6 @@ const VideoInfo = () => {
           </div>
         </div>
         <span className={styles.content}>
-          {console.log(item?.date)}
           <span style={{fontWeight: '700'}}>{item?.viwes && formatNumbers(item?.viwes)} viwes </span>
           <span style={{fontWeight: '700'}}>{item?.date && handlePublishedTime(item?.date)}  </span>
           {item?.description}
