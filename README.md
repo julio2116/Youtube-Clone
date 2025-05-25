@@ -2,6 +2,8 @@
 
 Este é um projeto clone do YouTube desenvolvido com React, focando em replicar as principais funcionalidades da plataforma de vídeos mais popular do mundo.
 
+🔗 **Deploy:** [Clique aqui para acessar](https://youtube-clone-murex-chi.vercel.app/)
+
 ## 🚀 Funcionalidades Atuais
 
 - Visualização de vídeos
