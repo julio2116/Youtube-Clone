@@ -12,6 +12,7 @@ const VideoInfo = () => {
   const videoId = term.get("v");
   const key = "AIzaSyCvJM7ZW8I2K0JEnOO76qa9w0DUyrg8VrA";
   useEffect(() => {
+    if(!videoId) return
     async function fetchDataVideo() {
       const dataFetchVideo = await fetch(
         `https://www.googleapis.com/youtube/v3/videos?key=${key}&part=snippet,statistics&id=${videoId}`
@@ -23,7 +24,7 @@ const VideoInfo = () => {
       );
       const data = await dataFetch.json();
 
-      console.log(data);
+      console.log(dataVideo);
       const result = {
         title: dataVideo.items[0].snippet.title,
         icon: data.items[0].snippet.thumbnails.medium.url,
@@ -55,7 +56,7 @@ const VideoInfo = () => {
               <div style={{ display: "flex", flexDirection: "column" }}>
                 <span>{item?.channelTitle}</span>
                 <span className={styles.subscribers}>
-                  {formatNumbers(item?.subscribers)} subscribers
+                  {item?.subscribers && formatNumbers(item?.subscribers)} subscribers
                 </span>
               </div>
               <button>Subscribe</button>
@@ -66,7 +67,7 @@ const VideoInfo = () => {
                 <div>
                   <img src={like} alt="" />
                   <span style={{ textAlign: "center" }}>
-                    {formatNumbers(item.likes)}
+                    {item?.likes && formatNumbers(item?.likes)}
                   </span>
                 </div>
                 <img src={like} style={{ rotate: "180deg" }} alt="" />
@@ -76,8 +77,9 @@ const VideoInfo = () => {
           </div>
         </div>
         <span className={styles.content}>
-          <span style={{fontWeight: '700'}}>{formatNumbers(item.viwes)} viwes </span>
-          <span style={{fontWeight: '700'}}>{handlePublishedTime(item.date)}  </span>
+          {console.log(item?.date)}
+          <span style={{fontWeight: '700'}}>{item?.viwes && formatNumbers(item?.viwes)} viwes </span>
+          <span style={{fontWeight: '700'}}>{item?.date && handlePublishedTime(item?.date)}  </span>
           {item?.description}
         </span>
       </div>
