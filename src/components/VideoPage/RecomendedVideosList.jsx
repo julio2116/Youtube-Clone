@@ -8,7 +8,6 @@ const RecomendedVideosList = () => {
   const [term] = useSearchParams();
   const videoId = term.get("v");
   const newResult = result.filter(video => video.videoId !== videoId)
-  console.log(result)
 
   return (
     <>
