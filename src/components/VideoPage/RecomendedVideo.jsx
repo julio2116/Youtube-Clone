@@ -2,16 +2,15 @@ import { handlePublishedTime } from "../../utils/publishedTime";
 import { formatNumbers } from "../../utils/FormatNumbers";
 import { useNavigate, useSearchParams } from "react-router";
 import styles from "./RecomendedVideo.module.css";
-import ShortTag from "../Main/ShortTag";
 import Tag from "../Main/Tag";
 
-const RecomendedVideo = ({ item, short }) => {
+const RecomendedVideo = ({ item }) => {
   const navigate = useNavigate();
   const [term] = useSearchParams();
 
   function handleVideoSelected(videoId) {
     const termSearched = term.get("search_query");
-    navigate(`/watch?search_query=${termSearched}&&v=${videoId}`);
+    navigate(`/watch?search_query=${termSearched}&v=${videoId}`);
   }
   return (
     <>
@@ -22,7 +21,7 @@ const RecomendedVideo = ({ item, short }) => {
         >
           <img src={item.thumb} alt="" />
           {item.kind === "video" && (
-            <span className={styles.duration}>{short ? <ShortTag /> : item.duration}</span>
+            <span className={styles.duration}>{item.duration}</span>
           )}
         </div>
         <div className={styles.videoInfo}>
